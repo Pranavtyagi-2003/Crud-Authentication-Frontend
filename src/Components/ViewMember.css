@@ -1,0 +1,74 @@
+.table{
+    /* height: 22vh; */
+    padding-bottom: 1rem;
+    width: 85%;
+    box-sizing: border-box;
+    margin: auto;
+    /* background-color: green; */
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  }
+  .upper{
+      height: 30%;
+      /* background-color: red; */
+      background-color: rgb(250, 250, 250);
+      border-bottom: .1px solid gray;
+  }
+  .lower{
+      height: 70%;
+      /* background-color: black; */
+  }
+  .upper>ul{
+      display: flex;
+      justify-content: space-around;
+      align-items: left;
+  }
+  .upper>ul>li{
+      list-style: none;
+      margin-right: 3rem;
+      padding-top: .4rem;
+      margin: auto;
+  }
+  .lower>ul{
+      display: flex;
+      justify-content: space-around;
+      align-items: left;
+  }
+  .lower>ul>li{
+      list-style: none;
+      margin-right: 3rem;
+      padding-top: .4rem;
+      margin: auto;
+  }
+  .Adjoin-btn{
+      width: 200%;
+      height: 5vh;
+      background-color: green;
+      color: white;
+      border: white;
+      border-radius: .5rem;
+  }
+  .Adjoin-btn2{
+      text-decoration: none;
+      color: inherit;
+  }
+  .Adjoin-btn3{
+    margin-left: 1rem;
+    width: 200%;
+    height: 5vh;
+    background-color:red;
+    color: white;
+    border: white;
+    border-radius: .5rem;
+}
+  .Adjoin-btn4{
+    text-decoration: none;
+    color: inherit;
+}
+.Re-Meeting{
+    font-family: Poppins sans-serif;
+    font-size: 20px;
+}
+a{
+    color: inherit;
+    text-decoration: none;
+}
