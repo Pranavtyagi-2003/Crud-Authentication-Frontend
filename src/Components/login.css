@@ -1,37 +1,44 @@
-.register{
+.register {
     width: 100vw;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    }
-    
-    .register-container {
+}
+
+.register-container {
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     padding: 3rem;
     width: 400px;
-    }
-    
-    .app-name-logo>h1 {
+}
+
+.app-name-logo>h1 {
     margin-top: 0;
-    }
-    
-    .input-box>form {
+}
+
+.input-box>form {
     display: flex;
     flex-direction: column;
-    }
-    .input-box>form>p{
+}
+
+.input-box>form>p {
     margin-top: 2rem;
-    }
-    .input-box>form>p>span>a{
+}
+
+.input-box>form>p>span>a {
     text-decoration: none;
-    }
-    
-    .name {
+}
+
+.name {
     margin-top: 1rem !important;
-    }
-    
-    .reg-btn{
+}
+
+.reg-btn {
     margin-top: 2rem !important;
-    }
+}
+
+.logout {
+    margin-top: -70rem !important;
+    margin-left: 70rem !important;
+}

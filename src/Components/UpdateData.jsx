@@ -1,43 +1,52 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./login.css";
 import TextField from "@mui/material/TextField";
 import { Button } from "@mui/material";
-import { Link } from "react-router-dom";
-import axios from "axios"
-import { useNavigate } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import axios from "axios";
 
 const Loginform = () => {
-  const navigate = useNavigate()
-
+  const { _id } = useParams();
   const [data, setData] = useState({});
 
   const changeHandler = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
-  }
+  };
 
+  const submitHandler = async (e) => {
+    console.log(data);
+    e.preventDefault();
+    await axios
+      .put(`http://localhost:5000/api/updateData/${_id}`, data)
+      .then((res) => {
+        console.log(res.data);
+        alert(res.data.message);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
-  const submitHandler = async(e)=>{
-    console.log(data)
-    e.preventDefault()
-    await axios.post("http://localhost:5000/api/adduser",data).then((res)=>{
-      console.log(res.data);
-      alert(res.data.message) 
-    }).catch((err)=>{
-      console.log(err);
-    })
-  }
-
-  const logout = () =>{
-    localStorage.clear()
-    navigate('/login')
-  }
+  useEffect(() => {
+    const getSingleData = async () => {
+      try {
+        await axios
+          .get(`http://localhost:5000/api/singleData/${_id}`)
+          .then((res) => {
+            setData(res.data.user);
+          });
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getSingleData();
+  }, []);
 
   return (
-    <div className="main">
-       <div className="register">
+    <div className="register">
       <div className="register-container">
         <div className="app-name-logo">
-          <h1>Member Data</h1>
+          <h1>Update Member Data</h1>
         </div>
         <div className="input-box">
           <form onSubmit={submitHandler}>
@@ -46,7 +55,7 @@ const Loginform = () => {
               type="text"
               className="name"
               id="name"
-              label="Name"
+              value={data.name}
               variant="standard"
               onChange={changeHandler}
             />
@@ -56,7 +65,7 @@ const Loginform = () => {
               type="email"
               className="name"
               id="email"
-              label="Email"
+              value={data.email}
               variant="standard"
               onChange={changeHandler}
             />
@@ -66,7 +75,7 @@ const Loginform = () => {
               type="text"
               className="name"
               id="phone"
-              label="Phone"
+              value={data.phone}
               variant="standard"
               onChange={changeHandler}
             />
@@ -76,7 +85,7 @@ const Loginform = () => {
               type="text"
               className="name"
               id="text"
-              label="Address"
+              value={data.address}
               variant="standard"
               onChange={changeHandler}
             />
@@ -88,7 +97,7 @@ const Loginform = () => {
               type="submit"
               variant="contained"
             >
-              Add Member
+              Update
             </Button>
           </form>
         </div>
@@ -105,9 +114,6 @@ const Loginform = () => {
         </Link>
       </div>
     </div>
-      <Button onClick={logout} className="logout" variant="contained">Logout</Button>
-    </div>
-   
   );
 };
 

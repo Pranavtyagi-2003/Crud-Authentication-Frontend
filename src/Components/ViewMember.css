@@ -1,7 +1,7 @@
 .table{
     /* height: 22vh; */
     padding-bottom: 1rem;
-    width: 85%;
+    width: 90%;
     box-sizing: border-box;
     margin: auto;
     /* background-color: green; */
@@ -27,17 +27,21 @@
       margin-right: 3rem;
       padding-top: .4rem;
       margin: auto;
+      width: 20%;
   }
   .lower>ul{
       display: flex;
-      justify-content: space-around;
+      margin-right: 2rem;
       align-items: left;
   }
   .lower>ul>li{
       list-style: none;
-      margin-right: 3rem;
+      margin-right: 2rem;
       padding-top: .4rem;
       margin: auto;
+      width: 11%;
+      overflow-x:auto;
+      margin-left: 0;
   }
   .Adjoin-btn{
       width: 200%;
