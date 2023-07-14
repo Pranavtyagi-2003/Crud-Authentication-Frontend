@@ -37,7 +37,7 @@ const Loginform = () => {
        <div className="register">
       <div className="register-container">
         <div className="app-name-logo">
-          <h1>Member Data bg</h1>
+          <h1>Member Data</h1>
         </div>
         <div className="input-box">
           <form onSubmit={submitHandler}>
